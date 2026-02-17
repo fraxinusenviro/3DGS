@@ -1,4 +1,4 @@
-# 3DGS — 3D Gaussian Splatting
+# 3DGS — 3D Gaussian Splatting for Ecological Applications
 
 This repository hosts a collection of **browser-based 3D Gaussian Splatting (3DGS) visualizations**, rendered live using WebGL and hosted via GitHub Pages. The examples demonstrate how dense point-based reconstructions can be explored interactively without traditional meshing workflows.
 
@@ -50,31 +50,16 @@ A modern browser with WebGL2 support is required.
 
 ## Purpose of This Repository
 
+## Purpose of This Repository
+
 This repository serves as:
 
-- A **public gallery** of 3D Gaussian Splat examples  
-- A **reference implementation** for hosting and viewing splat data on the web  
-- A **testbed** for evaluating visual quality, performance, and data preparation workflows  
-- A lightweight alternative to desktop viewers for sharing dense 3D reconstructions  
+- A **public gallery of ecological and environmental 3D Gaussian Splat examples**, illustrating vegetation structure, ground surfaces, and small-scale natural features  
+- A **reference implementation** for hosting and viewing dense, field-derived 3D datasets (e.g., photogrammetry or mobile scanning) directly in a web browser  
+- A **testbed for evaluating the suitability of 3D Gaussian Splatting for ecological applications**, including representation of fine-scale structure, occlusion, and surface complexity  
+- A **lightweight alternative to desktop point cloud viewers** for sharing and reviewing high-density 3D reconstructions in applied environmental and field-based workflows  
 
-The examples are intentionally minimal and self-contained, making them suitable as starting points for custom visualization pipelines.
+The examples are intentionally minimal and self-contained, making them suitable as starting points for custom visualization pipelines focused on ecological analysis, documentation, and communication.
 
----
 
-## Typical Applications
 
-3D Gaussian Splatting is particularly useful where dense point data is available and meshing is undesirable or lossy, including:
-
-- Ecological and vegetation structure documentation  
-- Photogrammetric scene reconstruction  
-- LiDAR and mobile scanning visualization  
-- Cultural heritage and artifact recording  
-- Rapid field data review and sharing  
-
----
-
-## Notes
-
-- The scenes linked here are demonstrations and may be clipped or simplified for performance.  
-- File naming reflects internal experiment variants (e.g., SH0 configurations) rather than finalized presentation conventions.  
-- No external servers or frameworks are required beyond GitHub Pages.
