@@ -8,30 +8,31 @@ This repository hosts a collection of **browser-based 3D Gaussian Splatting (3DG
 
 ## Live Examples
 
-Each link below opens an interactive 3DGS scene directly in the browser:
+These examples span a range of subject matter including vegetation, natural surfaces, small structures, and built objects, illustrating how 3DGS handles both organic and hard-edged geometry. Each link below opens an interactive 3DGS scene directly in the browser. HTML files were generated using Supersplat (https://superspl.at)
 
-- **BirchSH0 (Clipped Forest Scene)**  
-  https://fraxinusenviro.github.io/3DGS/BirchSH0clip.html  
-
-- **LockSH0**  
+### Built Environment
+- **Lock**  
   https://fraxinusenviro.github.io/3DGS/LockSH0.html  
-
-- **DumpsterSH0**  
+  
+- **Dumpster**  
   https://fraxinusenviro.github.io/3DGS/DumpsterSH0.html  
 
 - **Structure**  
-  https://fraxinusenviro.github.io/3DGS/Structure.html  
+  https://fraxinusenviro.github.io/3DGS/Structure.html
 
-- **WigwamSH0**  
+### Natural and Semi-natural Environment
+
+- **Wigwam & Forest**  
   https://fraxinusenviro.github.io/3DGS/WigwamSH0.html  
 
-- **RocksSH0**  
+- **Rocks**  
   https://fraxinusenviro.github.io/3DGS/RocksSH0.html  
 
-- **HonckenyaSH0**  
+- **Honckenya peploides**  
   https://fraxinusenviro.github.io/3DGS/HonckenyaSH0.html  
 
-These examples span a range of subject matter including vegetation, natural surfaces, small structures, and built objects, illustrating how 3DGS handles both organic and hard-edged geometry.
+- **Birch (Clipped Forest Scene)**  
+  https://fraxinusenviro.github.io/3DGS/BirchSH0clip.html
 
 ---
 
