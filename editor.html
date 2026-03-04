@@ -1,0 +1,52 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>3DGS PLY Editor</title>
+  <link rel="stylesheet" href="./src/styles.css" />
+</head>
+<body>
+  <header>
+    <label>Import <input id="importFile" type="file" accept=".ply"/></label>
+    <button id="exportBtn">Export</button>
+    <select id="exportMode">
+      <option value="visible">Visible layers</option>
+      <option value="selection">Selection only</option>
+    </select>
+    <select id="renderMode">
+      <option value="points">Point cloud</option>
+      <option value="splats">Splats (adapter)</option>
+      <option value="composite">Composite</option>
+    </select>
+    <label>Point size <input id="pointSize" type="range" min="1" max="10" value="2"/></label>
+    <label>Point opacity <input id="pointOpacity" type="range" min="0" max="1" step="0.01" value="1"/></label>
+    <button id="deleteBtn">Delete Selection</button>
+  </header>
+  <main>
+    <aside>
+      <h3>Layers</h3>
+      <div id="layers"></div>
+      <button id="dupLayer">Duplicate Layer</button>
+      <button id="removeLayer">Delete Layer</button>
+      <h3>Color Transform</h3>
+      <div id="colorControls">
+        <label>Brightness<input data-color="brightness" type="range" min="-1" max="1" step="0.01"/></label>
+        <label>Contrast<input data-color="contrast" type="range" min="0" max="2" step="0.01"/></label>
+        <label>Gamma<input data-color="gamma" type="range" min="0.2" max="3" step="0.01"/></label>
+        <label>Saturation<input data-color="saturation" type="range" min="0" max="2" step="0.01"/></label>
+        <label>Invert<input data-color="invert" type="checkbox"/></label>
+      </div>
+    </aside>
+    <section class="view"><canvas id="viewport"></canvas></section>
+    <aside>
+      <h3>Selection Inspector</h3>
+      <p>Click, shift-click, or shift-drag for box selection.</p>
+      <p>Constraints: PLY schemas vary; SH/DC may be RGB-baked on export; huge scenes may require low quality.</p>
+      <p id="stats">No file loaded.</p>
+      <p>Shortcuts: F frame, Del delete, Ctrl/Cmd+Z undo, Ctrl/Cmd+Shift+Z redo, Esc clear selection.</p>
+    </aside>
+  </main>
+  <script type="module" src="./src/main.js"></script>
+</body>
+</html>

@@ -59,3 +59,16 @@ This repository serves as:
 - A **lightweight alternative to desktop point cloud viewers** for sharing and reviewing high-density 3D reconstructions in applied environmental and field-based workflows  
 
 The examples are intentionally minimal and self-contained, making them suitable as starting points for custom visualization pipelines focused on ecological analysis, documentation, and communication.
+
+## Editor (Experimental)
+
+A client-only **PLY Gaussian editing sandbox** is now included at `editor.html`. It supports local PLY import (picker or drag/drop), layer-based non-destructive deletion, undo/redo, selection tools, point-cloud rendering, an OSS splat-renderer adapter wrapper, and binary PLY export of edits.
+
+Open locally with any static server (for ES module imports), for example:
+
+```bash
+python -m http.server 8000
+```
+
+Then browse to `http://localhost:8000/editor.html`.
+
