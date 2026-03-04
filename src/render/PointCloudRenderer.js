@@ -13,7 +13,6 @@ export class PointCloudRenderer {
     this.controls.enableDamping = true;
     this.pointSize = 2;
     this.opacity = 1;
-    this.lastBounds = null;
 
     const light = new THREE.HemisphereLight(0xffffff, 0x555555, 1);
     this.scene.add(light);
@@ -76,31 +75,10 @@ export class PointCloudRenderer {
     const geo = new THREE.BufferGeometry();
     geo.setAttribute('position', new THREE.BufferAttribute(positions, 3));
     geo.setAttribute('color', new THREE.BufferAttribute(colors, 3));
-    const mat = new THREE.PointsMaterial({ size: this.pointSize * 0.03, sizeAttenuation: true, vertexColors: true, transparent: true, opacity: this.opacity * layer.opacity });
+    const mat = new THREE.PointsMaterial({ size: this.pointSize * 0.01, vertexColors: true, transparent: true, opacity: this.opacity * layer.opacity });
     this.points = new THREE.Points(geo, mat);
     this.scene.add(this.points);
     geo.computeBoundingSphere();
-    geo.computeBoundingBox();
-    this.lastBounds = {
-      sphere: geo.boundingSphere?.clone(),
-      box: geo.boundingBox?.clone()
-    };
-  }
-
-  frameScene() {
-    if (!this.lastBounds?.sphere) return;
-    const sphere = this.lastBounds.sphere;
-    const center = sphere.center;
-    const radius = Math.max(sphere.radius, 0.01);
-    const fov = THREE.MathUtils.degToRad(this.camera.fov);
-    const distance = radius / Math.sin(fov / 2);
-    const dir = new THREE.Vector3(0, 0, 1);
-    this.camera.position.copy(center).add(dir.multiplyScalar(distance * 1.15));
-    this.controls.target.copy(center);
-    this.camera.near = Math.max(0.001, distance / 1000);
-    this.camera.far = Math.max(1000, distance * 20);
-    this.camera.updateProjectionMatrix();
-    this.controls.update();
   }
 
   pick(clientX, clientY) {

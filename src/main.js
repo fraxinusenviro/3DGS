@@ -44,7 +44,6 @@ async function loadFile(file) {
   selection.clear();
   await splatAdapter.loadSplatData(canonical);
   refresh();
-  pointRenderer.frameScene();
 }
 
 fileInput.addEventListener('change', (e) => {
@@ -114,7 +113,7 @@ document.addEventListener('keydown', (e) => {
   if (e.key === 'Delete') deleteSelection();
   if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === 'z' && !e.shiftKey) { e.preventDefault(); commands.undo(); refresh(); }
   if ((e.ctrlKey || e.metaKey) && ((e.key.toLowerCase() === 'z' && e.shiftKey) || e.key.toLowerCase() === 'y')) { e.preventDefault(); commands.redo(); refresh(); }
-  if (e.key.toLowerCase() === 'f') pointRenderer.frameScene();
+  if (e.key.toLowerCase() === 'f') pointRenderer.controls.reset();
   if (e.key === 'Escape') { selection.clear(); refresh(); }
 });
 
